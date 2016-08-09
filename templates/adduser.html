@@ -1,0 +1,90 @@
+{% extends "track.html" %}
+{% block map %}
+
+<div id="slide" class="carousel slide" data-ride="carousel" style="margin-top:63px">
+    <header class="header">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-9">
+                <div class="drivem text-center" style="padding-top:30px">
+                    <p>Exploit Tracker</p>
+                    <h3><strong>Be connected to your car, always.</strong></h3>
+                    <div class="cls"></div>
+
+                </div>
+              </div>
+              <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </header>
+    </div>
+
+<div class="container">
+        <div id="signupbox" style="display:block; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 sign_upp">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add Users</div>
+
+                        </div>
+                        <div class="panel-body">
+                                        {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                                <strong>{{ error|escape }}</strong>
+                                                         </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                                {% for error in form.non_field_errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                         <strong>{{ error|escape }}</strong>
+                                                        </div>
+                                                {% endfor %}
+                                        {% endif %}
+
+                            <form role="form" method="post" action=".">{% csrf_token %}
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                    <input type="text" class="form-control" placeholder=" Enter UserName"  {{ form.username }}
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                    <input type="password" class="form-control" placeholder="Enter Password" {{ form.password1 }}
+                                </div>
+
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                <input type="password" class="form-control" placeholder="Retype Password"  {{ form.password2 }}
+                            </div>
+
+                              <div class="form-group">
+
+                                  <input style="background-color:#bce8f1;" type="submit"  value="ADD">
+
+                                </div>
+
+                            </form>
+
+
+                         </div>
+                    </div>
+      	        </div>
+        </div>
+
+
+
+</div><!----wraper page---->
+</div><!--- wraper--->
+
+{% endblock %}
+
+reg:003:00000001:9876543221:0000111-01111111-00000000:78.25480:20.58425:020:080
+rgd:00000001:9876543212
+
+trc:00000000:1470473241:lat-17.48420:lng-78.39840:spd-000
+
+
+

@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+
+<body onscroll="var cls=$('#bs-example-navbar-collapse-1').height();if(cls!=undefined) $('#bs-example-navbar-collapse-1').css({'height':'0px','border':'none'});">
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="margin-a-0 padding-a-0">
+
+    <!-- Navigation -->
+        <nav class="navbar previewNav navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle hidden visible-xs pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:#e3edf3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                    </button>
+                   <a href="index.html" class="navbar-brand"><img src="/media/images/logog.png" class="img-responsive logog logog1"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div>
+                        <ul class="nav navbar-nav navbar-right" id="nav1" >
+                            <li><a class="top_link " href="#">Add Vehicles</a>
+                            </li>
+                            <li><a class="top_link" href="#">Add Users</a>
+                            </li>
+
+
+                            <li><a class="top_link" href="vehiclelist.html" >Vehicle List</a>
+                            </li>
+
+                            <span class = "dropdown">
+                                <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown"><i class="fa fa-user-md"></i>
+                                    My Account<span class = "caret"></span>
+                                </button>
+
+                                <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
+
+                                 <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href = "#" style="font-size: 15px"><i class="fa fa-user fa-fw"></i> {{ user.username |title}}</a>
+
+                                 </li>
+
+                                 <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href = "/update_profile/"><i class="fa fa-pencil fa-fw"></i>Manage Account</a>
+                                 </li>
+                                    <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href="/mobileReg/" ><i class="fa fa-pencil fa-fw"></i>Mobile REZ</a>
+                                 </li>
+
+                                     <li role = "presentation" class = "divider"></li>
+
+                                            <li role = "presentation">
+                                             <a role = "menuitem" tabindex = "-1" href="/logout/" ><i class="fa fa-sign-out fa-fw"></i>Log Out</a>
+                                        </li>
+                                     </ul>
+                                </span>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+  <!-- Header -->
+  <!-- Carousel
+    ================================================== -->
+                    <div id="slide" class="carousel slide" data-ride="carousel" style="margin-top:63px">
+
+                     </div><!-- /.carousel -->
+
+        <div class="container" style="margin-bottom:50px">
+            <div class="row">
+                 <div class="col-md-8" style="padding-top:30px">
+                     <div class="plan" style="background: #fff;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15221.264948029046!2d78.4056847!3d17.4924112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd92bba3ac2af5131!2sExploit+IT+Solutions+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1468234827605"
+                            width="100%" height="570" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+                     </div>
+                  </div>
+
+
+                 <div class="col-md-4" style="padding-top:50px">
+                    <div class="panel panel-default tryfree">
+
+                     <div class="panel-heading">
+			<!--<p id="test"><p>-->
+                         Details
+                    </div>
+                    <div class="panel-body">
+                    <br>
+                    <div class="group1">
+                    <div class="row">
+	                <div class="group1">
+                    <div class="row">
+                    <div class="col-md-3"> <label class="label1">Type of Vehicle</label></div>
+
+                    <div class="col-md-9">
+
+                    <select id="interest" name="interest" maxlength="100" class="form-control">
+                     <option value="Individual">All</option>
+                      <option value="Bulk Requirement">Car</option>
+
+                      <option value="Reseller">Truck</option>
+                      <option value="Other Enquiry">Bus</option>
+                    </select>
+
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3"><label class="label1">Status: </label></div>
+      <div class="col-md-9">
+
+    </div></div></div>
+
+
+     <div class="group1">
+     <div class="row">
+     <div class="col-md-3"><label class="label1">AC :</label></div>
+      <div class="col-md-9">
+
+      </div>
+    </div></div>
+
+
+   <div class="group1">
+     <div class="row">
+     <div class="col-md-3"><label class="label1">Fuel <span style="margin-left:8px;">:</span></label></div>
+      <div class="col-md-9">
+
+      </div>
+    </div></div>
+   <div class="group1">
+     <div class="row">
+				<div class="col-md-3"><label class="label1">Fencing:</label> </div>
+                 <a href="/track/" style="color:blue"> Track:</a>
+				  <div class="col-md-9">
+				  </div>
+
+				  </div>
+			  </div>
+            </div>
+          </div>
+
+
+	</div>
+
+
+  </div>
+  </div>
+
+   </div>
+
+    </div>
+
+
+ <footer class="short" id="footer">
+     <div class="container">
+         <div class="row">
+             <div class="col-md-4 col-centered">
+
+                 <h2 class="head_foot">Exploit Tracker</h2>
+                    <div class="foot_log"><a href="#"><img src="/media/images/logosmalll.png" class="foot_smal" alt="fl"/></a></div>
+                     <hr class="col-centered">
+						<div class="head_foot">
+							<h4 class="heading-primary">We are social</h4>
+							<ul class="social-icons">
+                                <li><a href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+                    <div class="row ">
+                        <div class="col-md-12 col-centered" style="color:#777">
+					        <div class="head_foot">
+					            © Copyright 2016.
+						            Exploit Tracker Pvt. Ltd.
+						            All Rights Reserved.
+						    </div>
+				        </div>
+				    </div>
+         </div>
+     </div>
+
+ </footer>
+
+
+
+   <div class="clearfix"></div>
+
+   </div>
+
+    </div>
+    </div>
+    <script src="/media/js/jquery-1.11.1.min.js"></script>
+    <script src="/media/js/bootstrap.min.js"></script>
+    <div id='f_cont'></div>
+
+</body>
+
+{% endblock %}
+

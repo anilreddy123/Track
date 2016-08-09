@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}Login{% endblock %}
+{% block content %}
+<body onscroll="var cls=$('#bs-example-navbar-collapse-1').height();if(cls!=undefined) $('#bs-example-navbar-collapse-1').css({'height':'0px','border':'none'});">
+
+        <div id="wrapper">
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper"  class="margin-a-0 padding-a-0 ">
+
+    <!-- Navigation -->
+        <nav class="navbar previewNav navbar-default navbar-fixed-top" >
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle hidden visible-xs pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:#e3edf3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                    </button>
+                   <a href="index.html" class="navbar-brand"><img src="/media/images/logog.png" class="img-responsive logog logog1" alt="MapmyIndia DriveMate"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div>
+                        <ul class="nav navbar-nav navbar-right" id="nav1" >
+                            <li><a class="top_link " href="index.html">Overview</a>
+                            </li>
+                            <li><a class="top_link" href="product.html">Features</a>
+                            </li>
+
+
+                            <li><a class="top_link" href="support1.html" >Support</a>
+                            </li>
+
+
+                            <li><a class="top_link"  href="contactus.html">Contact</a>
+                            </li>
+                              <li><a class="top_link active" href="#" >Login</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+                </div>
+        </div>
+
+
+  <!-- Header -->
+ <!-- Carousel-->
+ <div id="slide" class="carousel slide" data-ride="carousel" style="margin-top:63px">
+     <header class="header">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-1"></div>
+              <div class="col-lg-9">
+               <div class="drivem text-center" style="padding-top:30px">
+                    <p>Exploit Tracker</p>
+                        <h3><strong>Be connected to your car, always.</strong></h3>
+                    <div class="cls"></div>
+
+               </div>
+              </div>
+              <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </header>
+ </div><!-- /.carousel -->
+
+<div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-centered">
+         <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Login</div>
+
+                    </div>
+              <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                         {% if form.non_field_errors %}
+    				            <ul class='form-errors' style = "color: red">
+       				                    {% for error in form.non_field_errors %}
+            			                <li>{{ error }}</li>
+        			                    {% endfor %}
+                                </ul>
+			            {% endif %}
+                        <form role="form" method="post" action=".">{% csrf_token %}
+
+                            <div class="form-group input-group" style="margin-bottom: 25px">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" class="form-control" placeholder="User Id" {{ form.username }}
+
+                            </div>
+                                <div style="color:red">{{form.username.errors}}</div>
+
+
+                            <div class="form-group input-group" style="margin-bottom: 25px">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter Password"  {{ form.password }}
+
+                            </div>
+                                <div style="color:red">{{form.password.errors}}</div>
+
+
+                            <div align="right">
+                                <input type="submit" value="Log In" class="btn btn-success " style="border-color:#1da1f2;background-color:#1da1f2;"/>
+
+                            </div>
+                        </form><hr/>
+                        <div class="signup" style="text-align: center;margin-top:15px;">
+                            <a href="/" role="button" style="text-decoration:none">forgot password</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+<script type="text/javascript">
+        document.getElementById('id_username').focus()
+    </script>
+        <script src="/media/js/jquery-1.11.1.min.js"></script>
+        <script src="/media/js/bootstrap.min.js"></script>
+ 
+
+<footer class="short" id="footer">
+				<div class="container">
+					<div class="row">
+                    <div class="col-md-4 col-centered">
+
+					<h2 class="head_foot">Exploit Tracker</h2><div class="foot_log"><a href="#"><img src="/media/images/logosmalll.png" class="foot_smal" alt="fl"/></a></div>
+							<hr class="col-centered">
+						<div class="head_foot">
+							<h4 class="heading-primary">We are social</h4>
+							<ul class="social-icons">
+                                <li><a href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+                    <div class="row "><div class="col-md-12 col-centered" style="color:#777">
+					<div class="head_foot">
+					© Copyright 2016.
+						Exploit Tracker Pvt. Ltd.
+						All Rights Reserved.
+						</div>
+				        </div>
+				    </div>
+                    </div>
+                </div>
+			</footer>
+
+
+
+   <div class="clearfix"></div>
+
+   </div>
+        <div id='f_cont'></div>
+{% endblock %}
+

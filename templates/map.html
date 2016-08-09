@@ -1,0 +1,437 @@
+<div class="panel-body">
+
+        <form id="MobileReg" class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+                                <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-left:3px;">Device ID</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="device_no" placeholder="Enter Device Id">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="MobileNo" class="col-md-3 control-label signlabel" style="width: 12%">Mobile </label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="mobile_no" placeholder="Enter Mobile Number">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="MobileNo" class="col-md-3 control-label signlabel" style="width: 12%">Flags</label>
+                                    <div class="col-sm-3">
+                                         <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Eng</label>
+                                            <select class ="dropdown-option" name="notify_eng">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify AC</label>
+                                            <select class ="dropdown-option" name="notify_ac">
+                                               <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Door</label>
+                                            <select class ="dropdown-option" name="notify_door">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Status</label>
+                                            <select class ="dropdown-option" name="notify_status">
+                                              <option value="STOP">STOP</option>
+                                              <option value="START">START</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Fuel</label>
+                                            <select class ="dropdown-option" name="notify_fuel">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Speed</label>
+                                            <select class ="dropdown-option" name="notify_speed">
+                                               <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Notify Where</label>
+                                            <select class ="dropdown-option" name="notify_where">
+                                               <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+
+                                    </div>
+
+
+                                   <div class="col-sm-3">
+
+                                       <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Eng Alert</label>
+                                            <select class ="dropdown-option" name="alert_eng">
+                                              <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">AC Alert</label>
+                                            <select class ="dropdown-option" name="alert_ac">
+                                              <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Door Alert</label>
+                                            <select class ="dropdown-option" name="alert_door">
+                                              <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Status Alert</label>
+                                            <select class ="dropdown-option" name="alert_status">
+                                             <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Fuel Alert</label>
+                                            <select class ="dropdown-option" name="alert_fuel">
+                                               <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Speed Alert</label>
+                                            <select class ="dropdown-option" name="alert_speed">
+                                              <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert Where</label>
+                                            <select class ="dropdown-option" name="alert_where">
+                                               <option value="False">Don't Alert</option>
+                                              <option value="True">Alert ON</option>
+                                            </select>
+                                         </div>
+
+                                    </div>
+
+
+
+                                    <div class="col-sm-3">
+                                         <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert Eng</label>
+                                            <select class ="dropdown-option" name="enable_eng">
+                                             <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  AC</label>
+                                            <select class ="dropdown-option" name="enable_ac">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  Door</label>
+                                            <select class ="dropdown-option" name="enable_door">
+                                             <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  Status</label>
+                                            <select class ="dropdown-option" name="enable_status">
+                                             <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  Fuel</label>
+                                            <select class ="dropdown-option" name="enable_fuel">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  Speed</label>
+                                            <select class ="dropdown-option" name="enable_speed">
+                                              <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width: 12%;padding-right:10px;font-size:10px;">Alert  Where</label>
+                                            <select class ="dropdown-option" name="enable_where">
+                                             <option value="False">OFF</option>
+                                              <option value="True">ON</option>
+                                            </select>
+                                         </div>
+
+
+                                    </div>
+
+                                     <div class="col-sm-3">
+                                   </div>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="Lat" class="col-md-3 control-label signlabel" style="width: 12%">Lat</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="lat" placeholder="Enter Lat">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Lng" class="col-md-3 control-label signlabel" style="width: 12%">Lng</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="lng" placeholder="Enter Lng">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="radius" class="col-md-3 control-label signlabel" style="width: 12%">Radius</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="radius" placeholder="Enter Radius">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="speed" class="col-md-3 control-label signlabel" style="width: 12%">Speed</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  name="speed" placeholder="Enter Speed">
+                                    </div>
+                                </div>
+
+                                 <input type="submit" value="submit" id="regadd">
+
+                            </form>
+
+
+
+
+
+
+
+<!doctype html>
+
+
+
+
+</body>
+    
+{% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                                <strong>{{ error|escape }}</strong>
+                                                         </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                                {% for error in form.non_field_errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                         <strong>{{ error|escape }}</strong>
+                                                        </div>
+                                                {% endfor %}
+                                        {% endif %}
+
+
+                            <form id="signupform" class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+                                <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Mobile No</label>
+                                          <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.mobile_no}}
+                                        </div>
+                                 </div>
+                                   <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Device ID</label>
+                                        <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.device_id}}
+                                        </div>
+                                   </div>
+                                    <div class="form-group">
+                                    <label for="MobileNo" class="col-md-3 control-label signlabel" style="width:12%">Flags</label>
+
+
+                                    <div class="col-sm-3" style="margin-left:20px;">
+                                        <div class="form-group">
+
+                                              Notify Eng:{{ form.eng_notify}}
+
+                                        </div>
+                                        <div class="form-group">
+
+                                           Notify AC: {{ form.ac_notify }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            Notify Door:{{ form.door_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                             Notify Status:{{ form.status_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                            Notify Fuel:{{ form.fuel_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                            Notify Speed:{{ form.speed_notify }}
+                                        </div>
+                                        <div class="form-group">
+
+                                            otify Where:{{ form.where_notify }}
+                                        </div>
+
+                                    </div>
+
+
+                                   <div class="col-sm-3">
+
+                                       <div class="form-group" id="alerteng">
+
+                                          Alert Eng: {{ form.eng_alert}}
+
+                                        </div>
+
+
+                                       <div class="form-group" id="alertac">
+
+                                           Alert AC:{{ form.ac_alert}}
+                                        </div>
+
+                                       <div class="form-group" id="alertdoor">
+
+                                           Alert Door:{{ form.door_alert}}
+                                        </div>
+
+                                       <div class="form-group" id="alertstatus">
+
+                                          Alert Status:{{ form.status_alert}}
+
+                                        </div>
+
+                                       <div class="form-group" id="alertfuel">
+                                             Alert Fuel:{{ form.fuel_alert}}
+
+                                        </div>
+
+
+                                       <div class="form-group" id="alertspeed">
+
+                                         Alert Speed:{{ form.speed_alert}}
+
+                                        </div>
+
+                                       <div class="form-group" id="alertacwher">
+
+                                         Alert Where:{{ form.where_alert}}
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-sm-3" id="test">
+                                        <div class="form-group" id="enableeng">
+
+                                         Enable Eng:{{ form.eng_eable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enableac">
+
+
+                                            Enable AC:{{ form.ac_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enabledoor">
+
+
+                                            Enable Door:{{ form.door_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablestatus">
+
+                                           Enable Status:{{ form.status_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablefuel">
+
+                                          Enable Fuel:{{ form.fuel_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablespeed">
+
+                                         Enable Speed:{{ form.speed_enable}}
+
+                                        </div>
+                                        <div class="form-group" id="enablewhere">
+
+                                            Enable Where:{{ form.where_enable }}
+
+                                        </div>
+
+                                     </div>
+
+                                       <div class="col-sm-3">
+                                       </div>
+
+                                </div>
+
+                                     <div class="form-group">
+                                         <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Latitude</label>
+                                        <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.lat}}
+                                        </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Longitude</label>
+                                             <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.lng}}
+                                        </div>
+                                     </div>
+
+                                      <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Redius</label>
+                                               <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.radius}}
+                                        </div>
+                                      </div>
+
+                                       <div class="form-group">
+                                           <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Speed</label>
+                                                <div class="col-md-9">
+                                               <input type="text" class="form-control"   placeholder="Enter Lat" {{form.speed}}
+                                              </div>
+                                       </div>
+
+
+                                     <input type="submit" value="submit" />
+
+
+                            </form>
+
+</html>

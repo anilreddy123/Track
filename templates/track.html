@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+<style>
+
+    #map {width: 800px; height: 500px}
+
+</style>
+
+<body onload='initialize()'>
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="margin-a-0 padding-a-0">
+
+    <!-- Navigation -->
+        <nav class="navbar previewNav navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle hidden visible-xs pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background:#e3edf3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                        <span class="icon-bar" style="background:#888"></span>
+                    </button>
+                   <a href="/" class="navbar-brand"><img src="/media/images/logog.png" class="img-responsive logog logog1"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div>
+
+                        <ul class="nav navbar-nav navbar-right" id="nav1" >
+
+                            {%if user.is_superuser %}
+                            <li><a class="top_link " href="/add_device/">Add Vehicles</a>
+                            </li>
+                            <li><a class="top_link" href="/adduser/">Add Users</a>
+                            </li>
+
+
+                            <li><a class="top_link" href="#" >Vehicle List</a>
+                            </li>
+                            {% endif %}
+
+                            <span class = "dropdown">
+                                <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown"><i class="fa fa-user-md"></i>
+                                    My Account<span class = "caret"></span>
+                                </button>
+
+                                <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
+
+                                 <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href = "#" style="font-size: 15px"><i class="fa fa-user fa-fw"></i> {{ user.username |title}}</a>
+
+                                 </li>
+
+                                 <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href = "/update_profile"><i class="fa fa-pencil fa-fw"></i>Manage Account</a>
+                                 </li>
+                                    <li role = "presentation">
+                                    <a role = "menuitem" tabindex = "-1" href = "/mobileReg/"><i class="fa fa-pencil fa-fw"></i>Mobile REZ</a>
+                                 </li>
+
+                                     <li role = "presentation" class = "divider"></li>
+
+                                            <li role = "presentation">
+                                             <a role = "menuitem" tabindex = "-1" href="/logout/" ><i class="fa fa-sign-out fa-fw"></i>Log Out</a>
+                                        </li>
+                                     </ul>
+                                </span>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% block map %}
+
+        <div id="slide" class="carousel slide" data-ride="carousel" style="margin-top:63px"></div><!-- /.carousel -->
+
+         <div class="container" style="margin-bottom:50px">
+            <div class="row">
+                 <div class="col-md-8" style="padding-top:30px">
+
+                    <div id = map></div>
+                 </div>
+
+                <div class="col-md-4" style="padding-top:30px;padding-left:60px;">
+
+                    <div class="panel panel-default tryfree">
+
+                     <div class="panel-heading">
+			<!--<p id="test"><p>-->
+                         Details
+                        </div>
+
+                        <div class="panel-body">
+                             <br>
+                                 <label class="label1">Type of Vehicle</label> .
+
+                                    <select id="device_id" name="device_id" maxlength="100" class="form-control", onchange= "getDetails(this.value)">
+                                        <option value="Device">Device</option>
+                                        <ul>{% for id in rows %}
+				                        <li><option value='{{id.0|stringformat:"08d"}}'>{{id.0|stringformat:"08d"}} </option></li>
+
+                                        {% endfor %}
+                                        </ul>
+                                    </select>
+                                  <ul id="data" style="list-style:none;margin:8px 0px 0px -38px;">
+                                  <li><div><label class="label1">Status: </label></div></li>
+                                  <li><div id = "lat"><label class="label1">Latitude:</label></div></li>
+                                  <li><div id = "lng"><label class="label1">Langitude: </label></div></li>
+                                      <li><div id = "time"><label class="label1">Time: </label></div></li>
+                                  <li><div id = "speed"><label class="label1">Speed: </label></div></li>
+                                  <li><div><label class="label1">AC: </label></div></li>
+                                  <li><div><label class="label1">Fuel: </label></div></li>
+                                 </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+             </div>
+        </div>
+    {% endblock %}
+
+ <footer class="short" id="footer">
+     <div class="container">
+         <div class="row">
+             <div class="col-md-4 col-centered">
+
+                 <h2 class="head_foot">Exploit Tracker</h2>
+                    <div class="foot_log"><a href="#"><img src="/media/images/logosmalll.png" class="foot_smal" alt="fl"/></a></div>
+                     <hr class="col-centered">
+						<div class="head_foot">
+							<h4 class="heading-primary">We are social</h4>
+							<ul class="social-icons">
+                                <li><a href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+                    <div class="row ">
+                        <div class="col-md-12 col-centered" style="color:#777">
+					        <div class="head_foot">
+					            © Copyright 2016.
+						            Exploit Tracker Pvt. Ltd.
+						            All Rights Reserved.
+						    </div>
+				        </div>
+				    </div>
+         </div>
+     </div>
+
+ </footer>
+
+        <div class="clearfix">
+
+            </div>
+
+                <script src="/media/js/jquery-1.11.1.min.js"></script>
+                <script src="/media/js/bootstrap.min.js"></script>
+               <script src="http://maps.google.com/maps/api/js"></script>
+            <div id='f_cont'></div>
+        <!---page-wraper--></div>
+    <!---wraper--></div>
+
+<script>
+var map, marker = {}
+var myLatLng = {lat: 19.1563, lng: 70.1444};
+
+function initialize() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 19,
+        center: myLatLng
+    });
+
+}
+
+function getDetails(v)
+{
+
+    $.post("/trackdetails/", {vardeviceid:v},function(data)
+    {
+    $("#data").html(data);
+    var lat = $('#lat').text();
+    var lng = $('#lng').text();
+    myLatLng.lat = parseFloat(lat)
+    myLatLng.lng = parseFloat(lng)
+
+    initialize()
+     var marker = new google.maps.Marker({
+          position: myLatLng
+        });
+        marker.setMap(map);
+    });
+}
+
+//setInterval(getDetails, 3000);
+</script>
+
+</body>
+
+{% endblock %}
+
+

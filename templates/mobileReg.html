@@ -1,0 +1,261 @@
+{% extends "track.html" %}
+{% block map %}
+
+
+<div class="container">
+        <div id="signupbox" style="display:block; margin-top:80px; margin-left: 12%" class="mainbox col-md-10 col-md-offset-4 col-sm-8 col-sm-offset-2 sign_upp">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Configure Device</div>
+
+                    <div class="panel-body" style="font-size: 13px">
+
+                                {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                                <strong>{{ error|escape }}</strong>
+                                                         </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                                {% for error in form.non_field_errors %}
+                                                        <div class="alert alert-error" style="color:green">
+                                                         <strong>{{ error|escape }}</strong>
+                                                        </div>
+                                                {% endfor %}
+                                        {% endif %}
+
+
+                            <form id="signupform" class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+                                <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Mobile No</label>
+                                          <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.mobile_no}}
+                                        </div>
+                                 </div>
+                                   <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Device ID</label>
+                                        <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.device_id}}
+                                        </div>
+                                   </div>
+
+                                    <div class="form-group">
+                                    <label for="MobileNo" class="col-md-3 control-label signlabel" style="width:12%">Flags</label>
+
+
+                                    <div class="col-sm-3" style="margin-left:20px;">
+                                        <div class="form-group">
+
+                                              Notify Eng:{{ form.eng_notify}}
+
+                                        </div>
+                                        <div class="form-group">
+
+                                           Notify AC: {{ form.ac_notify }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            Notify Door:{{ form.door_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                             Notify Status:{{ form.status_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                            Notify Fuel:{{ form.fuel_notify}}
+                                        </div>
+                                        <div class="form-group">
+                                            Notify Speed:{{ form.speed_notify }}
+                                        </div>
+                                        <div class="form-group">
+
+                                            otify Where:{{ form.where_notify }}
+                                        </div>
+
+                                    </div>
+
+
+                                   <div class="col-sm-3">
+                                        <div class="form-group" id="alerteng">
+
+                                          Alert Departure: {{ form.departure_alert}}
+
+                                        </div>
+
+                                       <div class="form-group" id="alerteng">
+
+                                          Alert Eng: {{ form.eng_alert}}
+
+                                        </div>
+
+
+                                       <div class="form-group" id="alertac">
+
+                                           Alert AC:{{ form.ac_alert}}
+                                        </div>
+
+                                       <div class="form-group" id="alertdoor">
+
+                                           Alert Door:{{ form.door_alert}}
+                                        </div>
+
+                                       <div class="form-group" id="alertstatus">
+
+                                          Alert Arrival:{{ form.arrival_alert}}
+
+                                        </div>
+
+                                       <div class="form-group" id="alertfuel">
+                                             Alert Fuel:{{ form.fuel_alert}}
+
+                                        </div>
+
+
+                                       <div class="form-group" id="alertspeed">
+
+                                         Alert Speed:{{ form.speed_alert}}
+
+                                        </div>
+
+                                       <div class="form-group" id="alertacwher">
+
+                                         Alert Radius:{{ form.radius_alert}}
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-sm-3" id="test">
+
+                                        <div class="form-group" id="enableeng">
+
+                                         Enable Departure:{{ form.departure_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enableeng">
+
+                                         Enable Eng:{{ form.eng_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enableac">
+
+
+                                            Enable AC:{{ form.ac_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enabledoor">
+
+
+                                            Enable Door:{{ form.door_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablestatus">
+
+                                           Enable Arival:{{ form.arrival_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablefuel">
+
+                                          Enable Fuel:{{ form.fuel_enable }}
+
+                                        </div>
+
+                                        <div class="form-group" id="enablespeed">
+
+                                         Enable Speed:{{ form.speed_enable}}
+
+                                        </div>
+                                        <div class="form-group" id="enablewhere">
+
+                                            Enable Radius:{{ form.radius_enable }}
+
+                                        </div>
+
+                                     </div>
+
+                                       <div class="col-sm-3">
+                                       </div>
+
+                                </div>
+
+                                     <div class="form-group">
+                                         <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Latitude</label>
+                                        <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.lat}}
+                                        </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Longitude</label>
+                                             <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.lng}}
+                                        </div>
+                                     </div>
+
+                                      <div class="form-group">
+                                            <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Redius</label>
+                                               <div class="col-md-9">
+                                           <input type="text" class="form-control"   placeholder="Enter Lat" {{form.radius}}
+                                        </div>
+                                      </div>
+
+                                       <div class="form-group">
+                                           <label for="deviceid" class="col-md-3 control-label signlabel" style="width:12%;padding-left:3px;">Speed</label>
+                                                <div class="col-md-9">
+                                               <input type="text" class="form-control"   placeholder="Enter Lat" {{form.speed}}
+                                              </div>
+                                       </div>
+
+
+                                     <input type="submit" value="submit" />
+
+
+                            </form>
+
+
+
+                         </div>
+                        </div>
+
+                    </div>
+        </div>
+</div>
+
+
+</div><!----wraper page---->
+</div><!--- wraper--->
+<script src="/media/js/jquery-1.11.1.min.js"></script>
+<script src="/media/js/bootstrap.min.js"></script>
+
+<script>
+
+$('#regadd').click(function(){
+
+ data = $("#MobileReg")..serialize();
+    $.ajax({
+        url:"/mobileReg/",
+        method:"POST",
+        data:data,
+        success:function(response){
+        if(result == "no_errors") location.href = "/"
+        }
+
+     });
+
+  });
+
+
+
+</script>
+
+
+{% endblock %}
+
+
+rgd:00000014:9014569996

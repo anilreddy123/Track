@@ -1,0 +1,122 @@
+{% extends "track.html" %}
+{% block map %}
+
+<div id="slide" class="carousel slide" data-ride="carousel" style="margin-top:63px">
+    <header class="header">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-9">
+                <div class="drivem text-center" style="padding-top:30px">
+                    <p>Exploit Tracker</p>
+                    <h3><strong>Be connected to your car, always.</strong></h3>
+                    <div class="cls"></div>
+
+                </div>
+              </div>
+              <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </header>
+    </div>
+
+<div class="container">
+        <div id="signupbox" style="display:block; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 sign_upp">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add Device</div>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <form  class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+                                <div class="form-group">
+		                    <label  class="col-md-3 control-label signlabel">Select User</label>
+
+		                    <select class ="dropdown-user" name="user">
+                            <option value="user">User</option>
+                             <ul>{% for u in user_list %}
+				                 <li><option value="{{u.id}}">{{u.username}}</option></li>
+
+                              {% endfor %}
+                             </ul>
+                            </select>
+
+		                     </div>
+                                 <div class="form-group">
+                                    <label for="deviceid" class="col-md-3 control-label signlabel">Device ID</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Enter Device Id" {{ form.device_id }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="MobileNo" class="col-md-3 control-label signlabel">IMEI Number</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Enter IMEI Number" {{ form.imei }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Lat" class="col-md-3 control-label signlabel">Mobile Number</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Enter Mobile Number" {{ form.mobile_no }}
+                                    </div>
+                                </div>
+
+                              <div class="form-group">
+		                                <label  class="col-md-3 control-label signlabel">Select Host</label>
+
+		                                    <select class ="dropdown-user" name="ip">
+                                                <option value="ip">Host</option>
+                                             <ul>{% for u in ip %}
+				                             <li><option value="{{u.id}}">{{u.ip}}</option></li>
+
+                                            {% endfor %}
+                                            </ul>
+                                        </select>
+
+                              </div>
+
+                               <div class="form-group">
+		                           <label  class="col-md-3 control-label signlabel">Select Port</label>
+
+		                             <select class ="dropdown-user" name="port">
+                                             <option value="port">Port</option>
+                                            <ul>{% for u in port %}
+				                                <li><option value="{{u.id}}">{{u.port_no}}</option></li>
+                                                {% endfor %}
+                                             </ul>
+                                     </select>
+
+		                       </div>
+
+                                 <input type="submit" value="submit" />
+
+                             </form>
+
+
+
+                         </div>
+                    </div>
+      	        </div>
+        </div>
+
+
+
+</div><!----wraper page---->
+</div><!--- wraper--->
+
+{% endblock %}
+
+reg:003:00000001:9014569952:0111111-0111111-0000000: 78.25480:17.58425:002:080
+
+
+
+
+
+
+<form method="post" action=".">{% csrf_token %}
+                                 <table border="0">
+                            {{ form.as_table }}
+                        </table>
+                        <input type="submit" value="submit" />
+                    </form>

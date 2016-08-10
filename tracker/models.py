@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-
 class IP(models.Model):
     ip = models.CharField(max_length=32)
 
@@ -15,10 +14,6 @@ class IP(models.Model):
 
 class Port(models.Model):
     port_no = models.IntegerField()
-
-
-
-
 
 
 class MobileReg(models.Model):
@@ -89,6 +84,7 @@ class Notify(models.Model):
 
 
 
-class UserType(models.Model):
+class Usertype(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    Reseller = models.NullBooleanField(default=False,null=True)
+    reseller = models.NullBooleanField(default=False,null=True)
+

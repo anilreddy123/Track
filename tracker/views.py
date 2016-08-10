@@ -87,7 +87,7 @@ def track(request):
 
 @csrf_exempt
 def trackdetails(request):
-    device_id = request.POST.get('vardeviceid',False)
+    device_id = request.POST.get('vardeviceid')
     try:
         db = MySQLdb.connect(host="188.166.219.4",
                              user="root",

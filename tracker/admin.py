@@ -2,20 +2,20 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 from .models import *
-from .models import UserType
+from .models import Usertype
 
 
 # Register your models here.
 
 
-class UserTypeInline(admin.StackedInline):
-    model = UserType
+class UsertypeInline(admin.StackedInline):
+    model = Usertype
     can_delete = False
     verbose_name_plural = 'usertype'
 
 
 class UserAdmin(BaseUserAdmin):
-    inlines = (UserTypeInline, )
+    inlines = (UsertypeInline, )
 
 # Re-register UserAdmin
 admin.site.unregister(User)

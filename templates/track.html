@@ -34,7 +34,7 @@
 
                         <ul class="nav navbar-nav navbar-right" id="nav1" >
 
-                            {%if user.is_superuser %}
+                            {%if user.usertype.reseller %}
                             <li><a class="top_link " href="/add_device/">Add Vehicles</a>
                             </li>
                             <li><a class="top_link" href="/adduser/">Add Users</a>
@@ -103,7 +103,7 @@
                              <br>
                                  <label class="label1">Type of Vehicle</label> .
 
-                                    <select id="device_id" name="device_id" maxlength="100" class="form-control", onchange= "getDetails(this.value)">
+                                    <select id="device_id" name="device_id" maxlength="100" class="form-control", onclick= "getDetails(this.value)">
                                         <option value="Device">Device</option>
                                         <ul>{% for id in rows %}
 				                        <li><option value='{{id.0|stringformat:"08d"}}'>{{id.0|stringformat:"08d"}} </option></li>
@@ -206,7 +206,14 @@ function getDetails(v)
     });
 }
 
-//setInterval(getDetails, 3000);
+
+
+
+//setInterval(function(){
+        //$("#device_id").click();
+        //},5000);
+
+
 </script>
 
 </body>
@@ -214,3 +221,4 @@ function getDetails(v)
 {% endblock %}
 
 
+u.usertype.reseller
